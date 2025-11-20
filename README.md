@@ -32,7 +32,12 @@ Details of the RISC-V 32i Instruction Encoding: [Download the PDF](https://githu
 1. [ISO Standard](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
 1. [GNU C Manual](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.pdf)
 
-# License and Support
+## 
+```bash
+gdb-multiarch main.elf -ex "target remote localhost:1234" -ex "break _start" -ex "continue" -q
 ```
-All rights reserved. For more information contact support@pyjamabrah.com
+and
 ```
+qemu-system-riscv32 -S -M virt -nographic -bios none -kernel main.elf -gdb tcp::1234
+```
+and
